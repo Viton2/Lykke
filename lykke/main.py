@@ -2,7 +2,7 @@ import mysql.connector
 from flask import Flask, render_template
 
 
-class SQL:
+class SqL:
     def __init__(self, usuario, senha, esquema):
         self.cnx = mysql.connector.connect(user=usuario, password=senha,
                                            host='127.0.0.1',

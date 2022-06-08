@@ -19,6 +19,13 @@ a:hover {
     letter-spacing: 4px;
 }
 
+.logoG {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 8%;
+}
+
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -38,6 +45,7 @@ main {
 }
 
 .nav-list {
+    margin-right: 8%;
     list-style: none;
     display: flex;
 }
@@ -55,7 +63,7 @@ main {
 .container1 {
     width: 85%;
     height: 40%;
-    background: white;
+    background: url("../static/imagens/PisagemDesenho.jpg") no-repeat center/100%;
 }
 
 .container2 {

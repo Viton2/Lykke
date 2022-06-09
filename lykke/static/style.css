@@ -149,13 +149,14 @@ h2 {
     font-weight: 1000;
 }
 
-/*Sobre*/
-
 .subMain {
     background-image: linear-gradient(to right, rgb(50, 69, 85),rgb(96, 168, 197));
     height: 92vh;
     width: 85%;
 }
+
+/*Sobre*/
+
 
 .TituloSobre {
     width: 25%;
@@ -205,4 +206,65 @@ p {
     object-fit: cover;
     border-radius: 10px; 
     box-shadow: 3px 3px 3px;
+}
+
+/*Contato*/
+
+
+
+.subMainContato {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: rgb(87, 147, 170);
+    height: 60vh;
+    width: 70vw;
+    border-radius: 10px;
+}
+
+
+input[name="pEmail"] {
+    height: 3vh;
+    width: 20vw;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+input[name="pNome"] {
+    height: 3vh;
+    width: 20vw;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+input[name="pMensagem"] {
+    height: 10vh;
+    width: 40vw;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+input[value="Enviar Imagem"] {
+    height: 3vh;
+}
+
+td {
+    color: white;
+    font-size: 120%;
+}
+
+
+.forms {
+    margin-bottom: 10%;
+    margin-left: 15%;
+}
+
+h3 {
+    font-size: 3.5vh;
+    color: rgb(255, 255, 255);
+    font-weight: 1000;
+}
+
+.opiniao {
+    font-size: 2vh;
+    margin-left: 1%;
 }

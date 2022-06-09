@@ -79,8 +79,12 @@ main {
     justify-content: space-around;
 }
 
-h1 {
+.fraseMotivacional {
     font-size: 2.5vw;
+}
+
+h1 {
+    font-size: 3.5vw;
 }
 
 .text {

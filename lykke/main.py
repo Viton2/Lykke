@@ -32,14 +32,24 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/alimentacao')
-def alimentacao():
-    return render_template('alimentacao.html')
-
-
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
+
+@app.route('/conteudo')
+def conteudo():
+    return render_template('conteudo.html')
+
+
+@app.route('/sobre')
+def sobre():
+    return render_template('sobre.html')
+
+
+@app.route('/alimentacao')
+def alimentacao():
+    return render_template('alimentacao.html')
 
 
 @app.route('/habitos')
@@ -62,13 +72,9 @@ def saudeMental():
     return render_template('saudeMental.html')
 
 
-@app.route('/sobre')
-def sobre():
-    return render_template('sobre.html')
+@app.route('/etica')
+def etica():
+    return render_template('etica.html')
 
-
-@app.route('/conteudo')
-def conteudo():
-    return render_template('conteudo.html')
 
 app.run(debug=True)

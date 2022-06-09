@@ -61,9 +61,11 @@ def lazer():
 def saudeMental():
     return render_template('saudeMental.html')
 
+
 @app.route('/sobre')
 def sobre():
     return render_template('sobre.html')
+
 
 @app.route('/conteudo')
 def conteudo():

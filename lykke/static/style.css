@@ -119,29 +119,10 @@ h1 {
     border-radius: 20px; 
 }
 
-.conteudo1 {
+.conteudo {
     margin: 30px;
 }
 
-.conteudo2 {
-    margin: 30px;
-}
-
-.conteudo3 {
-    margin: 30px;
-}
-
-.conteudo4 {
-    margin: 30px;
-}
-
-.conteudo5 {
-    margin: 30px;
-}
-
-.conteudo6 {
-    margin: 30px;
-}
 
 h2 {
     text-align: center;
@@ -210,8 +191,6 @@ p {
 
 /*Contato*/
 
-
-
 .subMainContato {
     margin-top: 10%;
     margin-bottom: 10%;
@@ -251,7 +230,6 @@ td {
     color: white;
     font-size: 120%;
 }
-
 
 .forms {
     margin-bottom: 10%;

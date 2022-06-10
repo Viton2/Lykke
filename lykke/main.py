@@ -66,9 +66,11 @@ def exercicios():
 def lazer():
     return render_template('lazer.html')
 
+
 @app.route('/lazerCultural')
 def lazerCultural():
     return render_template('lazerCultural.html')
+
 
 @app.route('/lazerArLivre')
 def lazerArLivre():

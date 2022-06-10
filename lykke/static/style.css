@@ -132,7 +132,7 @@ h2 {
 
 .subMain {
     background-image: linear-gradient(to right, rgb(50, 69, 85),rgb(96, 168, 197));
-    height: 92vh;
+    height: 100%;
     width: 85%;
 }
 
@@ -257,4 +257,18 @@ h3 {
     font-weight: 700;
     color: rgb(255, 255, 255);
     text-shadow: 0.1em 0.1em #333;
+}
+
+.imagensLazer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.textoLazer {
+    margin-top: 4%;
+    margin-left: 9%;
+    margin-bottom: 4%;
+    margin-right: 9%;
 }

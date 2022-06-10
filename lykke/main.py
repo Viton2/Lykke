@@ -72,9 +72,9 @@ def saudeMental():
     return render_template('saudeMental.html')
 
 
-@app.route('/etica')
+@app.route('/aconselhamento')
 def etica():
-    return render_template('etica.html')
+    return render_template('aconselhamento.html')
 
 
 app.run(debug=True)

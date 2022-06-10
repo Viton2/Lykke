@@ -66,6 +66,14 @@ def exercicios():
 def lazer():
     return render_template('lazer.html')
 
+@app.route('/lazerCultural')
+def lazerCultural():
+    return render_template('lazerCultural.html')
+
+@app.route('/lazerArLivre')
+def lazerArLivre():
+    return render_template('lazerArLivre.html')
+
 
 @app.route('/saudeMental')
 def saudeMental():
@@ -73,7 +81,7 @@ def saudeMental():
 
 
 @app.route('/aconselhamento')
-def etica():
+def aconselhamento():
     return render_template('aconselhamento.html')
 
 

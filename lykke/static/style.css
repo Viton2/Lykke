@@ -175,6 +175,7 @@ p {
     flex-direction: row;
     justify-content: space-around;
     margin-top: 2%;
+    flex-wrap: wrap;
 }
 
 .perfil {
@@ -244,4 +245,16 @@ h3 {
 .opiniao {
     font-size: 2vh;
     margin-left: 1%;
+}
+
+/*Lazer*/
+
+.tituloLazer {
+    margin-left: 6%;
+    width: 50%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.1em 0.1em #333;
 }

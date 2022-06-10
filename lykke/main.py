@@ -1,9 +1,9 @@
 import mysql.connector
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 class SQL:
-    def __init__(self, usuario, senha, esquema):
+    def __init__(self, usuario='root', senha='uniceub', esquema='lykke'):
         self.cnx = mysql.connector.connect(user=usuario, password=senha,
                                            host='127.0.0.1',
                                            database=esquema)
@@ -33,8 +33,26 @@ def home():
 
 
 @app.route('/contact')
-def contact():
+def up_contact():
     return render_template('contact.html')
+
+
+@app.route('/getContact', methods=['POST'])
+def get_contact():
+    global msg
+    if request.method == 'POST':
+        nome = request.form['pNome']
+        email = request.form['pEmail']
+        mensagem = request.form['pMensagem']
+
+        mysql = SQL()
+        comando = "INSERT INTO contato(nome, email, mensagem) VALUES (%s, %s, %s);"
+        if mysql.executar(comando, [nome, email, mensagem]):
+            msg = 'Dados enviados com sucesso!'
+        else:
+            msg = 'Falha no envio dos dados.'
+
+    return render_template('get_contact.html', msg=msg)
 
 
 @app.route('/conteudo')

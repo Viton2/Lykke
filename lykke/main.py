@@ -47,7 +47,6 @@ def get_contact():
             nome = request.form['pNome']
             email = request.form['pEmail']
             mensagem = request.form['pMensagem']
-
             mysql = SQL()
             comando = "INSERT INTO contato(nome, email, mensagem) VALUES (%s, %s, %s);"
             if mysql.executar(comando, [nome, email, mensagem]):

@@ -4,6 +4,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 a {
@@ -32,7 +33,6 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-image: linear-gradient(to top, rgb(50, 69, 85),rgb(73, 127, 148));
     height: 8vh;
 }
@@ -90,7 +90,6 @@ h1 {
 
 .text {
     width: 40%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     margin-left: 7%;
     margin-top: 7%;
@@ -118,6 +117,7 @@ h1 {
     object-fit: contain;
     object-fit: cover;
     border-radius: 20px; 
+    box-shadow: 3px 3px 3px rgba(34, 33, 33, 0.767);
 }
 
 .conteudo {
@@ -129,6 +129,7 @@ h2 {
     text-align: center;
     color: rgb(255, 255, 255);
     font-weight: 1000;
+    text-shadow: 0.1em 0.1em rgba(41, 40, 40, 0.76);
 }
 
 body {
@@ -152,7 +153,6 @@ body {
 
 .TituloSobre {
     width: 25%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     font-weight: 700;
     color: rgb(255, 255, 255);
@@ -167,7 +167,6 @@ body {
 
 p {
     font-size: 1.5vw;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color:white;
 }
 
@@ -175,7 +174,6 @@ p {
     font-size: 2.5vw;
     margin-left: 5%;
     width: 20%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     font-weight: 400;
     color: rgb(255, 255, 255);
@@ -236,6 +234,7 @@ input[name="pMensagem"] {
 
 input[value="Enviar Imagem"] {
     height: 3vh;
+    
 }
 
 td {
@@ -244,6 +243,7 @@ td {
 }
 
 .forms {
+    margin-top: 2%;
     margin-bottom: 10%;
     margin-left: 15%;
 }
@@ -264,7 +264,6 @@ h3 {
 .tituloLazer {
     margin-left: 6%;
     width: 50%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     font-weight: 700;
     color: rgb(255, 255, 255);
@@ -290,7 +289,6 @@ h3 {
 .tituloLazerArLivre {
     margin-left: 4%;
     width: 50%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     font-weight: 700;
     color: rgb(255, 255, 255);
@@ -316,6 +314,7 @@ h3 {
 .TituloOpcoesLazer {
     font-size: 1.8vw;
     margin-bottom: 2%;
+    text-shadow: 0.1em 0.1em rgba(51, 51, 51, 0.815);
 }
 
 .opcoes {
@@ -334,6 +333,7 @@ h3 {
     object-fit: contain;
     object-fit: cover;
     border-radius: 10px; 
+    box-shadow: 3px 3px 3px rgba(41, 40, 40, 0.719); 
 }
 
 .textoOpcoes {

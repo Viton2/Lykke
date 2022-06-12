@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercícios Físicos</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/style.css">
 </head>
 <body>
@@ -24,9 +25,40 @@
     </header>
     <main> 
         <div class="subMain">
-            
+            <h1>Gráfico de Barras</h1>
+            <hr/>
+            <div id="divBarras"></div>
+            <hr/>
+            <br/>
         </div>
     </main>
-    
 </body>
 </html>
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["intervalo", "Proporção (%)", { role: "style" }]
+        {{ barras_03 | safe }}
+      ]);
+ 
+       function getValueAt(column, dataTable, row) {
+         return dataTable.getFormattedValue(row, column);
+       }
+ 
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1, 2]);
+ 
+      var options = {
+        title: "Proporção de Prática do Nível Recomendado de Atividade Física no Lazer  - fora do âmbito escolar ou trabalho, por mais de 150 minutos para atividade moderada ou por 75 minutos para atividades vigorosas na semana",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("divBarras"));
+      chart.draw(view, options);
+  }
+  </script>

@@ -103,8 +103,17 @@ def barras():
 
 
 @app.route('/exercicio')
-def exercicios():
-    return render_template('exercicio.html')
+def barras_03():
+   mysql = SQL()
+   comando = "SELECT intervalo, proporcao FROM exercicio_lazer"
+
+   cs = mysql.consultar(comando, ())
+   grf = ""
+   for [intervalo, proporcao] in cs:
+      grf += f", ['{intervalo}', {proporcao}, '#9999FF']"
+   cs.close()
+
+   return render_template('exercicio.html', barras_03=grf)
 
 
 @app.route('/lazer')

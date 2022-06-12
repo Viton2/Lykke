@@ -39,7 +39,7 @@ def up_contact():
 
 @app.route('/getContact', methods=['POST'])
 def get_contact():
-    global msg
+    msg = ''
     if request.method == 'POST':
         if '@' not in 'pEmail':
             msg = 'O email é inválido, tente novamente.'

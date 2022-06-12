@@ -45,11 +45,14 @@ def get_contact():
         email = request.form['pEmail']
         mensagem = request.form['pMensagem']
         mysql = SQL()
-        comando = "INSERT INTO contato(nome, email, mensagem) VALUES (%s, %s, %s);"
-        if mysql.executar(comando, [nome, email, mensagem]):
-            msg = 'Dados enviados com sucesso!'
+        if '@' not in email:
+            msg = 'Email inválido, tente novamente.'
         else:
-            msg = 'Falha no envio dos dados.'
+            comando = "INSERT INTO contato(nome, email, mensagem) VALUES (%s, %s, %s);"
+            if mysql.executar(comando, [nome, email, mensagem]):
+                msg = 'Dados enviados com sucesso!'
+            else:
+                msg = 'Falha no envio dos dados.'
 
     return render_template('get_contact.html', msg=msg)
 

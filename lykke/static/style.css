@@ -182,7 +182,6 @@ body {
 .graficoHome {
     height: 70%;
     width: 40%;
-    margin-top: 5%;
 }
 
 .containerGrafico {
@@ -192,7 +191,7 @@ body {
     flex-wrap: wrap;
     height: 500px;
     width: 95%;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-bottom: 5%;
 }
 
@@ -412,6 +411,36 @@ h3 {
 }
 
 .msgVoltar {
+    font-size: 1.5vw;
     width: 100%;
     text-align: center;
+    margin-top: 1%;
+}
+
+/*Páginas dos gráficos*/
+
+
+.divBarras01 {
+    height: 70%;
+    width: 40%;
+    margin-top: 5%;
+}
+
+.divBarras02 {
+    height: 70%;
+    width: 40%;
+    margin-top: 5%;
+}
+
+.divBarras {
+    height: 70%;
+    width: 40%;
+}
+
+.pagGrafico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }

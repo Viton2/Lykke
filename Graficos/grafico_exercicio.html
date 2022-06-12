@@ -22,7 +22,7 @@
    function drawChart() {
      var data = google.visualization.arrayToDataTable([
        ["intervalo", "Proporção (%)", { role: "style" }]
-       {{ barras | safe }}
+       {{ barras_03 | safe }}
      ]);
 
       function getValueAt(column, dataTable, row) {
@@ -33,7 +33,7 @@
      view.setColumns([0, 1, 2]);
 
      var options = {
-       title: "Proporção de Pessoas de 18 Anos ou Mais de Idade com Autoavaliação de Saúde Boa ou Muito Boa",
+       title: "Proporção de Prática do Nível Recomendado de Atividade Física no Lazer  - fora do âmbito escolar ou trabalho, por mais de 150 minutos para atividade moderada ou por 75 minutos para atividades vigorosas na semana",
        width: 600,
        height: 400,
        bar: {groupWidth: "95%"},

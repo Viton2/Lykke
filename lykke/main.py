@@ -56,27 +56,17 @@ def get_contact():
 
     return render_template('get_contact.html', msg=msg)
 
-
-@app.route('/graficobarra')
-def barras():
-    mysql = SQL()
-    comando = "SELECT intervalo, proporcao FROM autoavaliacao_saude"
-
-    cs = mysql.consultar(comando, ())
-    grf = ""
-    for [intervalo, proporcao] in cs:
-        grf += f", ['{intervalo}', {proporcao}, '#9999FF']"
-    cs.close()
-
-    return render_template('graficobarra.html', barras=grf)
-
-
 @app.route('/conteudo')
 def conteudo():
     return render_template('conteudo.html')
 
 
-@app.route('/doisgraficos')
+@app.route('/sobre')
+def sobre():
+    return render_template('sobre.html')
+
+
+@app.route('/alimentacao')
 def barras_02():
     mysql = SQL()
     comando = "SELECT intervalo, proporcao FROM consumo_hortalicas"
@@ -95,22 +85,21 @@ def barras_02():
         grf_02 += f", ['{intervalo}', {proporcao}, '#00D4F7']"
     cs_02.close()
 
-    return render_template('doisgraficos.html', barras_01=grf, barras_02=grf_02)
-
-
-@app.route('/sobre')
-def sobre():
-    return render_template('sobre.html')
-
-
-@app.route('/alimentacao')
-def alimentacao():
-    return render_template('alimentacao.html')
+    return render_template('alimentacao.html', barras_01=grf, barras_02=grf_02)
 
 
 @app.route('/habitos')
-def habitos():
-    return render_template('habitos.html')
+def barras():
+    mysql = SQL()
+    comando = "SELECT intervalo, proporcao FROM autoavaliacao_saude"
+
+    cs = mysql.consultar(comando, ())
+    grf = ""
+    for [intervalo, proporcao] in cs:
+        grf += f", ['{intervalo}', {proporcao}, '#9999FF']"
+    cs.close()
+
+    return render_template('habitos.html', barras=grf)
 
 
 @app.route('/exercicio')

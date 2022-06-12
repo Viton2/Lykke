@@ -1,32 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bons Hábitos</title>
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
+   <meta charset="UTF-8">
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <title>Bóns Hábitos</title>
+   <link rel="stylesheet" type="text/css" href="../static/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logoG">
-                <div class="ImagemLogo"><img src="../static/imagens/logo_teste_3.png" height="80%", width="80%"/></div>
-                <a class="logo" href="/">Lykke</a>
-            </div>
-            <ul class="nav-list">
-                <li><a href="/">Home</a></li>
-                <li><a href="/sobre">Sobre</a></li>
-                <li><a href="/conteudo">Conteúdo</a></li>
-                <li><a href="/contact">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main> 
-        <div class="subMain">
-            
+  <header>
+    <nav>
+        <div class="logoG">
+            <div class="ImagemLogo"><img src="../static/imagens/logo_teste_3.png" height="80%", width="80%"/></div>
+            <a class="logo" href="/">Lykke</a>
         </div>
-    </main>
-    
+        <ul class="nav-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+            <li><a href="/conteudo">Conteúdo</a></li>
+            <li><a href="/contact">Contato</a></li>
+        </ul>
+    </nav>
+  </header>
+  <main> 
+    <div class="subMain2">
+        <div class="TituloMain"><h1>Gráfico de Barras</h1></div>
+      <hr/>
+      <div class="pagGrafico">
+        <div class="divBarras" id="divBarras">
+      </div>
+   
+      </div>
+      <hr/>
+      <br/>
+    </div>
+  </main>
 </body>
 </html>
+
+<script type="text/javascript">
+   google.charts.load("current", {packages:["corechart"]});
+   google.charts.setOnLoadCallback(drawChart);
+   function drawChart() {
+     var data = google.visualization.arrayToDataTable([
+       ["intervalo", "Proporção (%)", { role: "style" }]
+       {{ barras | safe }}
+     ]);
+
+      function getValueAt(column, dataTable, row) {
+        return dataTable.getFormattedValue(row, column);
+      }
+
+     var view = new google.visualization.DataView(data);
+     view.setColumns([0, 1, 2]);
+
+     var options = {
+       title: "Proporção de Pessoas de 18 Anos ou Mais de Idade com Autoavaliação de Saúde Boa ou Muito Boa",
+       width: 600,
+       height: 400,
+       bar: {groupWidth: "95%"},
+       legend: { position: "none" },
+     };
+     var chart = new google.visualization.BarChart(document.getElementById("divBarras"));
+     chart.draw(view, options);
+ }
+ </script>

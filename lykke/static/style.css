@@ -443,8 +443,36 @@ h3 {
 
 .pagGrafico {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    margin-top: 5%;
+    justify-content: space-around;
+    margin-left: 5%;
+    margin-top: 1%;
     margin-bottom: 5%;
+}
+
+/*Alimentaçao*/
+
+.textoAlimentacao {
+    width: 40%;
+    margin: 5%;
+}
+
+.topicosAlimentacao {
+    color: white;
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: 1.3vw;
+}
+
+.imagensAlimentacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.containerAlimentacao {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 3%;
 }

@@ -41,18 +41,15 @@ def up_contact():
 def get_contact():
     global msg
     if request.method == 'POST':
-        if '@' not in 'pEmail':
-            msg = 'O email é inválido, tente novamente.'
+        nome = request.form['pNome']
+        email = request.form['pEmail']
+        mensagem = request.form['pMensagem']
+        mysql = SQL()
+        comando = "INSERT INTO contato(nome, email, mensagem) VALUES (%s, %s, %s);"
+        if mysql.executar(comando, [nome, email, mensagem]):
+            msg = 'Dados enviados com sucesso!'
         else:
-            nome = request.form['pNome']
-            email = request.form['pEmail']
-            mensagem = request.form['pMensagem']
-            mysql = SQL()
-            comando = "INSERT INTO contato(nome, email, mensagem) VALUES (%s, %s, %s);"
-            if mysql.executar(comando, [nome, email, mensagem]):
-                msg = 'Dados enviados com sucesso!'
-            else:
-                msg = 'Falha no envio dos dados.'
+            msg = 'Falha no envio dos dados.'
 
     return render_template('get_contact.html', msg=msg)
 

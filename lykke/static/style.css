@@ -179,6 +179,22 @@ body {
     width: 85%;
 }
 
+.graficoHome {
+    height: 80%;
+    width: 40%;
+    margin-right: 3%;
+}
+
+.containerGrafico {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 500px;
+    width: 85%;
+    margin-top: 8%;
+}
+
 /*Sobre*/
 
 .TituloSobre {

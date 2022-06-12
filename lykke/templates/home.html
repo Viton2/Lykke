@@ -56,14 +56,44 @@
         <hr SIZE=1 WIDTH=84.8%>
 
         <div class="container2">
-            <div class="estatisticasHome">
-                <div class="TituloMain"><h1>Gráficos (mudar titulo)</h1></div>
+            <div class="containerGrafico">
+                <div class="estatisticasHome">
+                    <div class="TituloMain"><h1>Gráficos</h1></div>
+                </div>
+                <div class="graficoHome" id="columnchart_material" ></div>
             </div>
         </div>
     </main>
     <script type="text/javascript" src="../static/vanilla-tilt.js"> </script>
     <script>
         VanillaTilt.init(document.querySelectorAll(".imagem"));
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.load('visualization', '1', {packages: ['corechart', 'bar']});
+        google.setOnLoadCallback(drawBarColors);
+
+      function drawBarColors() {
+        var data = google.visualization.arrayToDataTable([
+          ['Transtorno', 'Brasil', 'Irlanda', 'Estados Unidos'],
+          ['Depressão', 59, 57, 55],
+          ['Ansiedade', 63, 61, 60]
+        ]);
+
+        console.log(google.visualization.arrayToDataTable);
+
+        var options = {
+          chart: {
+            title: 'Depressão e Ansiedade',
+            subtitle: 'Porcentagem da população com casos durante a pandemia e o isolamento social',
+          },
+          colors: ['#009c3b', '#FF7900', '#002868'],
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
     </script>
 </body>
 </html>

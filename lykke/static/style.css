@@ -88,6 +88,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    justify-content: center;
 }
 
 .fraseMotivacional {
@@ -96,7 +97,6 @@ main {
     width: 60%;
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: #000;
-    
 }
 
 .textoHome {
@@ -144,11 +144,14 @@ h1 {
 }
 
 .conteudo {
-    margin: 30px;
+    margin: 3%;
+    text-align: center;
 }
 
 .estatisticasHome {
-    margin-top: 3%;
+    margin-top: 5%;
+    width: 40%;
+    height: 100%;
 }
 
 h2 {
@@ -180,8 +183,9 @@ body {
 }
 
 .graficoHome {
-    height: 70%;
+    height: 60%;
     width: 40%;
+    margin-top: 5%;
 }
 
 .containerGrafico {
@@ -189,10 +193,10 @@ body {
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 500px;
+    height: 450px;
     width: 95%;
     margin-top: 2%;
-    margin-bottom: 5%;
+    margin-bottom: 20%;
 }
 
 /*Sobre*/

@@ -127,9 +127,9 @@ def saudeMental():
     return render_template('saudeMental.html')
 
 
-@app.route('/aconselhamento')
-def aconselhamento():
-    return render_template('aconselhamento.html')
+@app.route('/sistemaImunologico')
+def sistemaImunologico():
+    return render_template('sistemaImunologico.html')
 
 
 app.run(debug=True)

@@ -38,7 +38,7 @@
           <br>
           <p>A alimentação não saudável é aquela em que o organismo consome alimentos ultraprocessados e as comidas de fácil e rápido acesso. São alimentos ricos em sal, gordura e açúcar sem valor nutricional que, quando consumidos em excesso, podem trazer prejuízos ao organismo como o aumento de peso e a manifestação de doenças.</P>
           <br><br>
-          <p>Benefícios da alimentação saudável:</p>
+          <h2>Benefícios da alimentação saudável:</h2>
           <ul class="topicosAlimentacao">
             <li>Fornece energia ao organismo;</li>
             <br>
@@ -95,10 +95,9 @@
 
      var options = {
        title: "Consumo recomendado de hortaliças e frutas, inclusive suco (pelo menos 25 vezes na semana)",
-       width: 600,
-       height: 400,
        bar: {groupWidth: "95%"},
        legend: { position: "none" },
+       width_units: '%'
      };
      var chart = new google.visualization.BarChart(document.getElementById("divBarras01"));
      chart.draw(view, options);
@@ -121,10 +120,9 @@
 
      var options = {
        title: "Consumo regular de feijão (cinco ou mais dias da semana)",
-       width: 600,
-       height: 400,
        bar: {groupWidth: "95%"},
        legend: { position: "none" },
+       width_units: '%'
      };
      var chart = new google.visualization.BarChart(document.getElementById("divBarras02"));
      chart.draw(view, options);

@@ -342,7 +342,7 @@ h3 {
 /*Lazer ao ar livre e cultural*/
 
 .tituloLazerCultural {
-    margin-left: 6%;
+    margin-left: 9%;
     width: 75%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
@@ -408,9 +408,6 @@ h3 {
 }
 
 
-
-/*Lazer cultural*/
-
 /*get_contact*/
 
 .textGetContact {
@@ -435,13 +432,13 @@ h3 {
 
 
 .divBarras01 {
-    height: 70%;
+    height: 80%;
     width: 40%;
     margin-top: 5%;
 }
 
 .divBarras02 {
-    height: 70%;
+    height: 80%;
     width: 40%;
     margin-top: 5%;
 }
@@ -455,8 +452,8 @@ h3 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 450px;
     justify-content: space-around;
-    margin-left: 5%;
     margin-top: 1%;
     margin-bottom: 5%;
 }
@@ -485,4 +482,61 @@ h3 {
     display: flex;
     justify-content: space-around;
     margin-right: 3%;
+}
+
+/*Exercícios*/
+
+.textoExercicio {
+    width: 95%;
+    margin-left: 2%;
+    margin-bottom: 4%;
+}
+
+.Imagem_Texto {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3%;
+}
+
+.beneficiosExercicio {
+    width: 95%;
+    margin: 2%;
+}
+
+.topicosExercicio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+    margin-left: 1.5%;
+    font-size: 1.3vw;
+}
+
+.imagensExercicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.textSideImage {
+    width: 40%;
+}
+
+.divBarrasExercicio {
+    height: 110%;
+    width: 70%;
+}
+
+.divExercicioGrafico {
+    display: flex;
+    justify-content: center;
+    height: 450px;
+    width: 95%;
+    padding-top: 5%;
+    margin-left: 2.5%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 12%;
 }

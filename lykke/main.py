@@ -140,5 +140,65 @@ def saudeMental():
 def sistemaImunologico():
     return render_template('sistemaImunologico.html')
 
+@app.route("/recomendacaoParques")
+def recomendacaoParques():
+   mysql = SQL()
+   cmd = 'SELECT idt_parque, latitude, longitude, nome_parque FROM parque'
+   cs = mysql.consultar(cmd, ())
+   marcadores = ''
+   popups = ''
+   icone = '{icon: lykkeicon}'
+   for idt, lat, lng, nome in cs:
+       marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
+       popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
+   cs.close()
+
+   return render_template("recomendacaoParques.html", marcadores = marcadores, popups = popups)
+
+@app.route("/recomendacaoRestaurantes")
+def recomendacaoRestaurantes():
+   mysql = SQL()
+   cmd = 'SELECT idt_restaurante, latitude, longitude, nome_rest FROM restaurante'
+   cs = mysql.consultar(cmd, ())
+   marcadores = ''
+   popups = ''
+   icone = '{icon: lykkeicon}'
+   for idt, lat, lng, nome in cs:
+       marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
+       popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
+   cs.close()
+
+   return render_template("recomendacaoRestaurantes.html", marcadores = marcadores, popups = popups)
+
+@app.route("/recomendacaoAcademias")
+def recomendacaoAcademias():
+   mysql = SQL()
+   cmd = 'SELECT idt_acad, latitude, longitude, nome_acad FROM academia'
+   cs = mysql.consultar(cmd, ())
+   marcadores = ''
+   popups = ''
+   icone = '{icon: lykkeicon}'
+   for idt, lat, lng, nome in cs:
+       marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
+       popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
+   cs.close()
+
+   return render_template("recomendacaoAcademias.html", marcadores = marcadores, popups = popups)
+
+@app.route("/recomendacaoCultural")
+def recomendacaoCultural():
+   mysql = SQL()
+   cmd = 'SELECT idt_cultural, latitude, longitude, nome_cult FROM cultural'
+   cs = mysql.consultar(cmd, ())
+   marcadores = ''
+   popups = ''
+   icone = '{icon: lykkeicon}'
+   for idt, lat, lng, nome in cs:
+       marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
+       popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
+   cs.close()
+
+   return render_template("recomendacaoCultural.html", marcadores = marcadores, popups = popups)
+
 
 app.run(debug=True)

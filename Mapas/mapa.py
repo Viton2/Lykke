@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/icones")
 def icones():
-   sql = bd.SQL('root', '', 'lykke')
+   sql = bd.SQL('root', 'uniceub', 'lykke')
    cmd = 'SELECT idt_parque, latitude, longitude, nome_parque FROM parque'
    ## cmd = 'SELECT idt_restaurante, latitude, longitude, nome_rest FROM restaurante'
    ## cmd = 'SELECT idt_acad, latitude, longitude, nome_acad FROM academia'

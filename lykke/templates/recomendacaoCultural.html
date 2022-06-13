@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
     integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
     crossorigin=""/>
+    <style>
+        th{
+            border: 1px solid rgb(255, 255, 255);
+            padding: 1%;
+        }
+
+        td{
+            border: 1px solid rgb(255, 255, 255);
+            padding: 1%;
+        }
+    </style>
 </head>
 <body onload="iniciar();">
     <header>
@@ -32,6 +43,19 @@
                 <div class="mapa" id="mapa" style=" border: solid white 2px;"></div>
             </div>
             <hr>
+            <table class="tableParques">
+                <tr>
+                   <th class="campos">Parque</th>
+                   <th class="campos">Bairro</th>
+                   <th class="campos">Endereço</th>
+                   <th class="campos">Telefone</th>
+                   <th class="campos">Horário de Funcionamento</th>
+                   <th class="campos">Avaliação</th>
+                   <th class="campos">Imagem</th>
+                </tr>
+                {{ imagens | safe }}
+            </table>
+        </div>
     </main>
 </body>
 </html>

@@ -555,3 +555,21 @@ h3 {
     width: 60vw;
     box-shadow: 3px 3px 3px rgba(41, 40, 40, 0.719); 
 }
+
+.tableParques {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    font-family: verdana;
+    font-size: 1.2em;
+    color: rgb(255, 255, 255);
+}
+
+.campos {
+    font-size: 1vw;
+    width: 5%;
+}
+
+.camposTD {
+    font-size: 1vw;
+}

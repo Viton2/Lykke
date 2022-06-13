@@ -142,63 +142,160 @@ def sistemaImunologico():
 
 @app.route("/recomendacaoParques")
 def recomendacaoParques():
-   mysql = SQL()
-   cmd = 'SELECT idt_parque, latitude, longitude, nome_parque FROM parque'
-   cs = mysql.consultar(cmd, ())
-   marcadores = ''
-   popups = ''
-   icone = '{icon: lykkeicon}'
-   for idt, lat, lng, nome in cs:
-       marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
-       popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
-   cs.close()
+    mysql = SQL()
+    cmd = 'SELECT idt_parque, latitude, longitude, nome_parque FROM parque'
+    cs = mysql.consultar(cmd, ())
+    marcadores = ''
+    popups = ''
+    icone = '{icon: lykkeicon}'
+    for idt, lat, lng, nome in cs:
+        marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
+        popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
+    cs.close()
 
-   return render_template("recomendacaoParques.html", marcadores = marcadores, popups = popups)
+    UPLOAD_FOLDER = '...\\static\\imagem_parque'
+    ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+
+    app.config['MAX_CONTENT_LENGTH'] = 8 * 1024 * 1024
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+    def allowed_file(filename):
+        return '.' in filename and \
+               filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+    comando = "SELECT idt_parque, nome_parque, bairro, endereco, telefone, hr_funcionamento_parque, avaliacao_parque, foto_parque FROM parque;"
+    imagens = ""
+    cs_02 = mysql.consultar(comando, [])
+    for (idt, nome, bairro, end, tel, hrfunc, avaliacao, foto) in cs_02:
+        imagens += "<TR class='campoTR'>\n"
+        imagens += "<TD class='camposTD'>" + nome + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + bairro + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + end + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + str(tel) + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + hrfunc + "</TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 5.5%'>" + str(avaliacao) + "</TD>\n"
+        imagens += "<TD><IMG class='imagem' SRC='" + foto + "'></TD>\n"
+        imagens += "</TR>\n"
+
+    return render_template("recomendacaoParques.html", marcadores = marcadores, popups = popups, imagens=imagens)
 
 @app.route("/recomendacaoRestaurantes")
 def recomendacaoRestaurantes():
-   mysql = SQL()
-   cmd = 'SELECT idt_restaurante, latitude, longitude, nome_rest FROM restaurante'
-   cs = mysql.consultar(cmd, ())
-   marcadores = ''
-   popups = ''
-   icone = '{icon: lykkeicon}'
-   for idt, lat, lng, nome in cs:
-       marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
-       popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
-   cs.close()
+    mysql = SQL()
+    cmd = 'SELECT idt_restaurante, latitude, longitude, nome_rest FROM restaurante'
+    cs = mysql.consultar(cmd, ())
+    marcadores = ''
+    popups = ''
+    icone = '{icon: lykkeicon}'
+    for idt, lat, lng, nome in cs:
+        marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
+        popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
+    cs.close()
 
-   return render_template("recomendacaoRestaurantes.html", marcadores = marcadores, popups = popups)
+    UPLOAD_FOLDER = '...\\static\\imagem_restaurante'
+    ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+
+    app.config['MAX_CONTENT_LENGTH'] = 8 * 1024 * 1024
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+    def allowed_file(filename):
+        return '.' in filename and \
+               filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+    comando = "SELECT idt_restaurante, nome_rest, bairro, endereco, telefone, hr_funcionamento_rest, avaliacao_rest, foto_rest FROM restaurante;"
+    imagens = ""
+    cs_02 = mysql.consultar(comando, [])
+    for (idt, nome, bairro, end, tel, hrfunc, avaliacao, foto) in cs_02:
+        imagens += "<TR class='campoTR'>\n"
+        imagens += "<TD class='camposTD'>" + nome + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + bairro + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + end + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + str(tel) + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + hrfunc + "</TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 5.5%'>" + str(avaliacao) + "</TD>\n"
+        imagens += "<TD><IMG class='imagem' SRC='" + foto + "'></TD>\n"
+        imagens += "</TR>\n"
+
+
+    return render_template("recomendacaoRestaurantes.html", marcadores = marcadores, popups = popups, imagens=imagens)
 
 @app.route("/recomendacaoAcademias")
 def recomendacaoAcademias():
-   mysql = SQL()
-   cmd = 'SELECT idt_acad, latitude, longitude, nome_acad FROM academia'
-   cs = mysql.consultar(cmd, ())
-   marcadores = ''
-   popups = ''
-   icone = '{icon: lykkeicon}'
-   for idt, lat, lng, nome in cs:
-       marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
-       popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
-   cs.close()
+    mysql = SQL()
+    cmd = 'SELECT idt_acad, latitude, longitude, nome_acad FROM academia'
+    cs = mysql.consultar(cmd, ())
+    marcadores = ''
+    popups = ''
+    icone = '{icon: lykkeicon}'
+    for idt, lat, lng, nome in cs:
+        marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
+        popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
+    cs.close()
 
-   return render_template("recomendacaoAcademias.html", marcadores = marcadores, popups = popups)
+    UPLOAD_FOLDER = '...\\static\\imagem_academia'
+    ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+
+    app.config['MAX_CONTENT_LENGTH'] = 8 * 1024 * 1024
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+    def allowed_file(filename):
+        return '.' in filename and \
+               filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+    comando = "SELECT idt_acad, nome_acad, bairro, endereco, telefone, hr_funcionamento_acad, avaliacao_acad, foto_acad FROM academia;"
+    imagens = ""
+    cs_02 = mysql.consultar(comando, [])
+    for (idt, nome, bairro, end, tel, hrfunc, avaliacao, foto) in cs_02:
+        imagens += "<TR class='campoTR'>\n"
+        imagens += "<TD class='camposTD'>" + nome + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + bairro + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + end + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + str(tel) + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + hrfunc + "</TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 5.5%'>" + str(avaliacao) + "</TD>\n"
+        imagens += "<TD><IMG class='imagem' SRC='" + foto + "'></TD>\n"
+        imagens += "</TR>\n"
+
+    return render_template("recomendacaoAcademias.html", marcadores = marcadores, popups = popups, imagens=imagens)
 
 @app.route("/recomendacaoCultural")
 def recomendacaoCultural():
-   mysql = SQL()
-   cmd = 'SELECT idt_cultural, latitude, longitude, nome_cult FROM cultural'
-   cs = mysql.consultar(cmd, ())
-   marcadores = ''
-   popups = ''
-   icone = '{icon: lykkeicon}'
-   for idt, lat, lng, nome in cs:
-       marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
-       popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
-   cs.close()
+    mysql = SQL()
+    cmd = 'SELECT idt_cultural, latitude, longitude, nome_cult FROM cultural'
+    cs = mysql.consultar(cmd, ())
+    marcadores = ''
+    popups = ''
+    icone = '{icon: lykkeicon}'
+    for idt, lat, lng, nome in cs:
+        marcadores += 'var mk_{} = L.marker([{}, {}], {}).addTo(m);\n'.format(idt, lat, lng, icone)
+        popups += 'mk_{}.bindPopup("{}");'.format(idt, nome)
+    cs.close()
 
-   return render_template("recomendacaoCultural.html", marcadores = marcadores, popups = popups)
+    UPLOAD_FOLDER = '...\\static\\imagem_cultural'
+    ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+
+    app.config['MAX_CONTENT_LENGTH'] = 8 * 1024 * 1024
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+    def allowed_file(filename):
+        return '.' in filename and \
+               filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+    comando = "SELECT idt_cultural, nome_cult, bairro, endereco, telefone, hr_funcionamento_cult, avaliacao_cult, foto_cult FROM cultural;"
+    imagens = ""
+    cs_02 = mysql.consultar(comando, [])
+    for (idt, nome, bairro, end, tel, hrfunc, avaliacao, foto) in cs_02:
+        imagens += "<TR class='campoTR'>\n"
+        imagens += "<TD class='camposTD'>" + nome + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + bairro + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + end + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + str(tel) + "</TD>\n"
+        imagens += "<TD class='camposTD'>" + hrfunc + "</TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 5.5%'>" + str(avaliacao) + "</TD>\n"
+        imagens += "<TD><IMG class='imagem' SRC='" + foto + "'></TD>\n"
+        imagens += "</TR>\n"
+
+    return render_template("recomendacaoCultural.html", marcadores = marcadores, popups = popups, imagens=imagens)
 
 
 app.run(debug=True)

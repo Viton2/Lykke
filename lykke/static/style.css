@@ -573,3 +573,18 @@ h3 {
 .camposTD {
     font-size: 1vw;
 }
+
+/*Saúde Mental*/
+
+.tituloSaudeMental {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.1em 0.1em #333;
+}
+
+.subTituloSaudeMental {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}

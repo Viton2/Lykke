@@ -67,10 +67,9 @@ def sobre():
 
 
 @app.route('/alimentacao')
-def barras_02():
+def alimentacao():
     mysql = SQL()
     comando = "SELECT intervalo, proporcao FROM consumo_hortalicas"
-
     cs = mysql.consultar(comando, ())
     grf = ""
     for [intervalo, proporcao] in cs:
@@ -89,7 +88,7 @@ def barras_02():
 
 
 @app.route('/habitos')
-def barras():
+def habitos():
     mysql = SQL()
     comando = "SELECT intervalo, proporcao FROM autoavaliacao_saude"
 
@@ -103,7 +102,7 @@ def barras():
 
 
 @app.route('/exercicio')
-def barras_03():
+def exercicio():
    mysql = SQL()
    comando = "SELECT intervalo, proporcao FROM exercicio_lazer"
 

@@ -444,7 +444,8 @@ h3 {
 }
 
 .divBarras {
-    height: 70%;
+    margin-top: 7%;
+    height: 90%;
     width: 40%;
 }
 
@@ -630,4 +631,20 @@ h3 {
 
 .imagemRecomendacao {
     width: 11.5%;
+}
+
+/*Hábitos*/
+
+.textoHabitos {
+    width: 95%;
+    margin-top: 3%;
+    margin-left: 2%;
+    margin-bottom: 4%;
+}
+
+.textoHabitosGR {
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 2%;
+    margin-bottom: 4%;
 }

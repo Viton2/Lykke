@@ -167,13 +167,13 @@ def recomendacaoParques():
     cs_02 = mysql.consultar(comando, [])
     for (idt, nome, bairro, end, tel, hrfunc, avaliacao, foto) in cs_02:
         imagens += "<TR class='campoTR'>\n"
-        imagens += "<TD class='camposTD'>" + nome + "</TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 2%'>" + nome + "</TD>\n"
         imagens += "<TD class='camposTD'>" + bairro + "</TD>\n"
         imagens += "<TD class='camposTD'>" + end + "</TD>\n"
         imagens += "<TD class='camposTD'>" + str(tel) + "</TD>\n"
         imagens += "<TD class='camposTD'>" + hrfunc + "</TD>\n"
-        imagens += "<TD class='camposTD' style='padding-left: 5.5%'>" + str(avaliacao) + "</TD>\n"
-        imagens += "<TD><IMG class='imagem' SRC='" + foto + "'></TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 3.5%'>" + str(avaliacao) + "</TD>\n"
+        imagens += "<TD class='imagemRecomendacao'><IMG class='imagem' SRC='" + foto + "'></TD>\n"
         imagens += "</TR>\n"
 
     return render_template("recomendacaoParques.html", marcadores = marcadores, popups = popups, imagens=imagens)
@@ -206,13 +206,13 @@ def recomendacaoRestaurantes():
     cs_02 = mysql.consultar(comando, [])
     for (idt, nome, bairro, end, tel, hrfunc, avaliacao, foto) in cs_02:
         imagens += "<TR class='campoTR'>\n"
-        imagens += "<TD class='camposTD'>" + nome + "</TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 2%'>" + nome + "</TD>\n"
         imagens += "<TD class='camposTD'>" + bairro + "</TD>\n"
         imagens += "<TD class='camposTD'>" + end + "</TD>\n"
         imagens += "<TD class='camposTD'>" + str(tel) + "</TD>\n"
         imagens += "<TD class='camposTD'>" + hrfunc + "</TD>\n"
-        imagens += "<TD class='camposTD' style='padding-left: 5.5%'>" + str(avaliacao) + "</TD>\n"
-        imagens += "<TD><IMG class='imagem' SRC='" + foto + "'></TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 3.5%'>" + str(avaliacao) + "</TD>\n"
+        imagens += "<TD class='imagemRecomendacao'><IMG class='imagem' SRC='" + foto + "'></TD>\n"
         imagens += "</TR>\n"
 
 
@@ -246,13 +246,13 @@ def recomendacaoAcademias():
     cs_02 = mysql.consultar(comando, [])
     for (idt, nome, bairro, end, tel, hrfunc, avaliacao, foto) in cs_02:
         imagens += "<TR class='campoTR'>\n"
-        imagens += "<TD class='camposTD'>" + nome + "</TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 2%'>" + nome + "</TD>\n"
         imagens += "<TD class='camposTD'>" + bairro + "</TD>\n"
         imagens += "<TD class='camposTD'>" + end + "</TD>\n"
         imagens += "<TD class='camposTD'>" + str(tel) + "</TD>\n"
         imagens += "<TD class='camposTD'>" + hrfunc + "</TD>\n"
-        imagens += "<TD class='camposTD' style='padding-left: 5.5%'>" + str(avaliacao) + "</TD>\n"
-        imagens += "<TD><IMG class='imagem' SRC='" + foto + "'></TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 3.5%'>" + str(avaliacao) + "</TD>\n"
+        imagens += "<TD class='imagemRecomendacao'><IMG class='imagem' SRC='" + foto + "'></TD>\n"
         imagens += "</TR>\n"
 
     return render_template("recomendacaoAcademias.html", marcadores = marcadores, popups = popups, imagens=imagens)
@@ -285,13 +285,13 @@ def recomendacaoCultural():
     cs_02 = mysql.consultar(comando, [])
     for (idt, nome, bairro, end, tel, hrfunc, avaliacao, foto) in cs_02:
         imagens += "<TR class='campoTR'>\n"
-        imagens += "<TD class='camposTD'>" + nome + "</TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 2%'>" + nome + "</TD>\n"
         imagens += "<TD class='camposTD'>" + bairro + "</TD>\n"
         imagens += "<TD class='camposTD'>" + end + "</TD>\n"
         imagens += "<TD class='camposTD'>" + str(tel) + "</TD>\n"
         imagens += "<TD class='camposTD'>" + hrfunc + "</TD>\n"
-        imagens += "<TD class='camposTD' style='padding-left: 5.5%'>" + str(avaliacao) + "</TD>\n"
-        imagens += "<TD><IMG class='imagem' SRC='" + foto + "'></TD>\n"
+        imagens += "<TD class='camposTD' style='padding-left: 3.5%'>" + str(avaliacao) + "</TD>\n"
+        imagens += "<TD class='imagemRecomendacao'><IMG class='imagem' SRC='" + foto + "'></TD>\n"
         imagens += "</TR>\n"
 
     return render_template("recomendacaoCultural.html", marcadores = marcadores, popups = popups, imagens=imagens)

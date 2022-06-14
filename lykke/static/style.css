@@ -588,3 +588,40 @@ h3 {
     margin-top: 3%;
     margin-bottom: 3%;
 }
+
+/*Sistema imunológico*/
+
+.tituloSistemaImunologico {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.1em 0.1em #333;
+}
+
+.textoSI {
+    width: 95%;
+    margin-top: 3%;
+    margin-left: 2%;
+    margin-bottom: 4%;
+}
+
+.imagensSI {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.textSideImageSI {
+    width: 50%;
+    margin-top: 3%;
+}
+
+.downloadPDF_SI {
+    display: flex;
+}
+
+.link {
+    margin-top: 0.8%;
+    margin-left: 1%;
+}

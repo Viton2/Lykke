@@ -186,6 +186,10 @@ body {
     height: 100%;
     width: 45%;
     margin-top: 5%;
+    padding: 1%;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px rgba(41, 40, 40, 0.719); 
 }
 
 .containerGrafico {
@@ -475,18 +479,30 @@ h3 {
     height: 80%;
     width: 40%;
     margin-top: 5%;
+    padding: 1%;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px rgba(41, 40, 40, 0.719); 
 }
 
 .divBarras02 {
     height: 80%;
     width: 40%;
     margin-top: 5%;
+    padding: 1%;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px rgba(41, 40, 40, 0.719); 
 }
 
 .divBarras {
     margin-top: 7%;
     height: 90%;
     width: 40%;
+    padding: 1%;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px rgba(41, 40, 40, 0.719); 
 }
 
 .pagGrafico {
@@ -569,6 +585,10 @@ h3 {
 .divBarrasExercicio {
     height: 110%;
     width: 70%;
+    padding: 1%;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px rgba(41, 40, 40, 0.719);
 }
 
 .divExercicioGrafico {

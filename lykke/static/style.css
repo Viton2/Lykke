@@ -259,11 +259,41 @@ p {
     margin-top: 10%;
     margin-bottom: 10%;
     background: rgb(87, 147, 170);
-    height: 60vh;
+    height: 65vh;
     width: 70vw;
     border-radius: 10px;
 }
 
+.campoContato {
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.2);
+    border: 1px solid white;
+    display: block;
+    padding: 0.2em 0.6em;
+}
+
+.campoContato input:focus {
+    background: rgb(253, 253, 253);
+}
+
+.botaoContato {
+    font-size: 1em;
+    background: rgba(255, 254, 254, 0.959);
+    border: 0;
+    margin-bottom: 1em;
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1 pxrgb(0, 0, 0, 0.5);
+}
+
+.campoContato:hover, .botaoContato:hover {
+    background: rgb(200, 219, 238);
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.2);
+    text-shadow: 0;
+}
+
+input {
+    border-radius: 8px;
+}
 
 input[name="pEmail"] {
     height: 3vh;
@@ -297,9 +327,13 @@ td {
 }
 
 .forms {
-    margin-top: 2%;
-    margin-bottom: 10%;
-    margin-left: 15%;
+    margin-top: 3%;
+    margin-left: 7%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 
 h3 {
@@ -309,6 +343,7 @@ h3 {
 }
 
 .opiniao {
+    width: 100%;
     font-size: 2vh;
     margin-left: 1%;
 }
